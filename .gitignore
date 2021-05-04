@@ -48,3 +48,5 @@ Thumbs.db
 /.vs/slnx.sqlite
 /.vs/movies-database/config/applicationhost.config
 /.vs/movies-database/v16/.suo
+/package-lock.json
+/.vs/VSWorkspaceState.json

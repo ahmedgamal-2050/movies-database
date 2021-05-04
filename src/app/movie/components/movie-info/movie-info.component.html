@@ -1,0 +1,45 @@
+<div class="container-fluid py-5" *ngIf="movieInfo && movieInfo.Title">
+  <div class="container">
+    <div class="row mx-0 justify-content-center border rounded-5 p-3 bg-light">
+      <div class="col-md-3">
+        <img src="{{movieInfo.Poster}}" alt="{{movieInfo.Title}}" class="w-100"/>
+      </div>
+      <div class="col-md-9 fs-7 px-0">
+        <ul class="row mx-0">
+          <li class="col-12 pb-3">
+            <h2 class="text-center">
+              {{movieInfo.Title}}
+            </h2>
+          </li>
+          <li class="col-4"><span class="fw-bold">imdb ID: </span>{{movieInfo.imdbID}}</li>
+          <li class="col-4"><span class="fw-bold">imdb Rating: </span>{{movieInfo.imdbRating}}</li>
+          <li class="col-4"><span class="fw-bold">imdb Votes: </span>{{movieInfo.imdbVotes}}</li>
+          <li class="col-12">
+            <span class="fw-bold">
+              Ratings:
+            </span>
+            <ul>
+              <li *ngFor="let rating of movieInfo.Ratings">
+                {{rating.Source}}: {{rating.Value}}
+              </li>
+            </ul>
+          </li>
+          <li class="col-12"><span class="fw-bold">Language: </span>{{movieInfo.Language}}</li>
+          <li class="col-4"><span class="fw-bold">Type: </span>{{movieInfo.Type}}</li>
+          <li class="col-4"><span class="fw-bold">Rated: </span>{{movieInfo.Rated}}</li>
+          <li class="col-4"><span class="fw-bold">Released: </span>{{movieInfo.Released}}</li>
+          <li class="col-8"><span class="fw-bold">Genre: </span>{{movieInfo.Genre}}</li>
+          <li class="col-4"><span class="fw-bold">Runtime: </span>{{movieInfo.Runtime}}</li>
+          <li class="col-4"><span class="fw-bold">BoxOffice: </span>{{movieInfo.BoxOffice}}</li>
+          <li class="col-4"><span class="fw-bold">Country: </span>{{movieInfo.Country}}</li>
+          <li class="col-4"><span class="fw-bold">DVD: </span>{{movieInfo.DVD}}</li>
+          <li class="col-12"><span class="fw-bold">Awards: </span>{{movieInfo.Awards}}</li>
+          <li class="col-12"><span class="fw-bold">Plot: </span>{{movieInfo.Plot}}</li>
+          <li class="col-6"><span class="fw-bold">Production: </span>{{movieInfo.Production}}</li>
+          <li class="col-6"><span class="fw-bold">Director: </span>{{movieInfo.Director}}</li>
+          <li class="col-12"><span class="fw-bold">Writer: </span>{{movieInfo.Writer}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

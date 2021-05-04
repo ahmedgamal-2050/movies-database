@@ -1,0 +1,19 @@
+<form [formGroup]="searchMovieForm" (submit)="searchMovie()">
+  <div class="row mx-0 g-3 justify-content-center pt-5">
+    <div class="">
+      <label for="inputPassword6" class="col-form-label">Search</label>
+    </div>
+    <div class="mx-2">
+      <input type="text" id="movieTitle" class="form-control" placeholder="Search by movie name"
+             formControlName="movieName">
+    </div>
+    <div class="">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <!--<div class="col-auto">
+      <span id="passwordHelpInline" class="form-text">
+        Must be 8-20 characters long.
+      </span>
+    </div>-->
+  </div>
+</form>

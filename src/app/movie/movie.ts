@@ -12,7 +12,7 @@ export interface Movie {
   Poster: string;
   Production: string;
   Rated: string;
-  Ratings: any[];
+  Ratings: Rating[];
   Released: string;
   Response: string;
   Runtime: string;
@@ -24,4 +24,9 @@ export interface Movie {
   imdbID: string;
   imdbRating: string;
   imdbVotes: string;
+}
+
+export interface Rating {
+  Source: string;
+  Value: string;
 }

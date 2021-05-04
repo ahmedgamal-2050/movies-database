@@ -4,18 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { MovieService } from './movie.service';
+import { MovieModule } from './movie/movie.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchMovieComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MovieModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

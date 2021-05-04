@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: #555;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fs-7 {
+    font-size: 14px;
+  }
+
+  .fw-bold {
+    font-weight: bold;
+  }
+}
