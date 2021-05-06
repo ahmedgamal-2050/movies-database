@@ -8,7 +8,7 @@ import { Movie, MovieSearch } from './movie/movie';
 })
 
 export class MovieService {
-  private url: string = 'http://www.omdbapi.com/?apikey=f9b3d9dc';
+  private url: string = 'https://www.omdbapi.com/?apikey=f9b3d9dc';
 
   constructor(public http: HttpClient) { }
 
