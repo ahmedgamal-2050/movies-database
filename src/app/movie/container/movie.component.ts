@@ -18,7 +18,6 @@ export class MovieComponent implements OnInit {
   searchMovie(movieSearch: MovieSearch) {
     this.movieService.getMovieInfo(movieSearch).subscribe(movie => {
       this.movieInfo = movie;
-      console.log(movie);
       this.ref.detectChanges();
     });
   }

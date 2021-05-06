@@ -24,6 +24,7 @@ export interface Movie {
   imdbID: string;
   imdbRating: string;
   imdbVotes: string;
+  Error: string;
 }
 
 export interface Rating {

@@ -43,3 +43,9 @@
     </div>
   </div>
 </div>
+
+<div class="container-fluid py-5" *ngIf="movieInfo && movieInfo.Error">
+  <div class="container text-center alert alert-danger">
+    Not found! Please try again !!
+  </div>
+</div>
