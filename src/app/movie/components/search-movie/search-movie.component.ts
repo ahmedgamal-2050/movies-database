@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Movie } from '../../movie';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MovieSearch } from '../../movie';
 
 @Component({
   selector: 'app-search-movie',
@@ -10,21 +10,29 @@ import { Movie } from '../../movie';
 export class SearchMovieComponent implements OnInit {
   public searchMovieForm!: FormGroup;
 
-  @Output() public search = new EventEmitter<string>();
+  @Output() public search = new EventEmitter<MovieSearch>();
 
   constructor(private fb: FormBuilder, private ref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.searchMovieForm = this.fb.group({
-      movieName: ['']
+      name: ['', Validators.required],
+      type: [null],
+      year: ['']
     });
   }
 
   searchMovie() {
     if (this.searchMovieForm.dirty && this.searchMovieForm.valid) {
-      this.search.emit(this.searchMovieForm.value.movieName);
+      this.search.emit(this.searchMovieForm.value);
       this.searchMovieForm.reset();
       this.ref.detectChanges();
+    } else {
+      this.name;
     }
+  }
+
+  get name() {
+    return this.searchMovieForm.get('name');
   }
 }

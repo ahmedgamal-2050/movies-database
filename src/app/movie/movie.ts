@@ -30,3 +30,9 @@ export interface Rating {
   Source: string;
   Value: string;
 }
+
+export interface MovieSearch {
+  name: string;
+  type: string;
+  year: number;
+}

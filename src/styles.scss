@@ -17,4 +17,12 @@ body {
   .fw-bold {
     font-weight: bold;
   }
+
+  .form-select {
+
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

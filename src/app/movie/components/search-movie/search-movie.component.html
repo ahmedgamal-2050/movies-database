@@ -1,19 +1,31 @@
-<form [formGroup]="searchMovieForm" (submit)="searchMovie()">
-  <div class="row mx-0 g-3 justify-content-center pt-5">
-    <div class="">
-      <label for="inputPassword6" class="col-form-label">Search</label>
+<form [formGroup]="searchMovieForm" (submit)="searchMovie()" class="" novalidate>
+  <div class="row justify-content-center mx-0 g-3 pt-5">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="">
+        <label for="movieName" class="mb-1">Movie Name <span class="text-danger">*</span></label>
+        <input type="text" id="movieName" class="form-control" placeholder="Movie name"
+               formControlName="name" [ngClass]="name && name.invalid && (name.dirty || name.touched) ? 'border-danger':''">
+        <div *ngIf="name && name.invalid && (name.dirty || name.touched)" class="text-danger">
+          Movie name is required.
+        </div>
+      </div>
+      <div class="my-3">
+        <label for="movieType" class="mb-1">Search Type</label>
+        <select class="form-control px-2" formControlName="type" id="movieType">
+          <option selected disabled value="null">Choose search type (Optional)</option>
+          <option value="movie">Movie</option>
+          <option value="series">Series</option>
+          <option value="episode">Episode</option>
+        </select>
+      </div>
+      <div class="">
+        <label for="movieYear" class="mb-1">Movie Year</label>
+        <input type="number" id="movieYear" class="form-control" placeholder="Movie Year (Optional)"
+               formControlName="year">
+      </div>
+      <div class="d-flex justify-content-end mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
     </div>
-    <div class="mx-2">
-      <input type="text" id="movieTitle" class="form-control" placeholder="Search by movie name"
-             formControlName="movieName">
-    </div>
-    <div class="">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-    <!--<div class="col-auto">
-      <span id="passwordHelpInline" class="form-text">
-        Must be 8-20 characters long.
-      </span>
-    </div>-->
   </div>
 </form>

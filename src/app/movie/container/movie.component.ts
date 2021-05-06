@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MovieService } from '../../movie.service';
-import { Movie } from '../movie';
+import { Movie, MovieSearch } from '../movie';
 
 @Component({
   selector: 'app-movie',
@@ -15,8 +15,8 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchMovie(movieName: string) {
-    this.movieService.getMovieInfo(movieName).subscribe(movie => {
+  searchMovie(movieSearch: MovieSearch) {
+    this.movieService.getMovieInfo(movieSearch).subscribe(movie => {
       this.movieInfo = movie;
       console.log(movie);
       this.ref.detectChanges();
